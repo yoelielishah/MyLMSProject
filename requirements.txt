@@ -1,0 +1,2 @@
+Flask
+gunicorn       #production server for python since flask is for development use 
