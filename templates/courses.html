@@ -1,0 +1,31 @@
+<div class= "border-bottom  row" style="margin-bottom: 16px; padding-bottom: 8px;">
+  
+  <div class="col-9">
+   <h3 style= "color : rgb(255, 0 , 0); margin-bottom: 4px;"><b>
+     {{course['course_name']}}</b>
+   </h3>
+   
+    <div>
+      <p>Level: {{course['course_level']}}</p>
+    </div>
+
+    <div>
+      <p>Duration: {{course['course_duration']}}</p>
+    </div>
+    
+    <div>
+      {% if 'course_fee' in course %}      <!-- if course_fee is in course then display the course_fee else display free -->
+      <p>Fee: {{course['course_fee']}}</p>
+      {% endif %}
+    </div>
+  
+  </div>  
+  
+  <div class="col-3">
+    <button type="button" class="btn btn-outline-primary" style= " margin-bottom: 
+   10px; padding-bottom: 8px ">Apply</button>
+  </div>
+
+  
+</div>
+
