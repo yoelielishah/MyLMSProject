@@ -85,17 +85,24 @@ COURSES = [
 ]
 
 
+
 #html route
 @app.route('/')
 def hello_world():
   return render_template('home.html',  
                          course = COURSES )
 
+#html route
+@app.route('/contactus.html')
+def contactus():
+  return render_template('contactus.html')
+
 #api route
 @app.route('/api/courses')
 def online_courses():
   return jsonify(COURSES)  
-                          
+
+  
 
 if __name__ == "__main__":
   app.run(debug=True)

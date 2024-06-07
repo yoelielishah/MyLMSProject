@@ -55,13 +55,20 @@
     
     #banner {
       width: 100%;
-      height: 360px;
-      object-fit: cover;
+      height: auto; /* Allow the height to adjust to maintain aspect ratio */
+      object-fit: contain; /* Ensure the entire image content is visible */
     }
 
     #contactusbutton{
       text-align:center;
+
+    .container {
+      width: 100%;
+      display: flex;
+      justify-content: center; /* Center the image horizontally if it's smaller than the container */
+      overflow: hidden; /* Prevent overflow if the image is larger than the container */
     }
+    
 
 
 
@@ -69,10 +76,15 @@
   </style>
 </head>
 <body>
+  {% include 'nav.html' %}
   
-  <div id="container">
-    <h1 class="text-center" mt-2 mb-4>Nakama Online Management Sytsem </h1>
-    <img class="img-fluid" id="banner" src = "https://1ee36b75-f3fe-4f83-bdfa-8cfe826e5b78-00-221uoovwpfbci.worf.replit.dev/static/Background.jpg" >
+  <div class="container">
+    
+    <img class="img-fluid" id="banner" src = "/static/testing.jpg" >
+
+    <h1 class="text-center" mt-2 mb-4>Nakama Online Learning Management Sytsem </h1>
+    <div class = "row">
+    <div class = "col-md-6" style =" margin-bottom: 16px; ">
     <p class="lead">
     <!-- <p class="bodytext">-->
       Welcome to Nakama Tech LMS!
@@ -91,6 +103,12 @@
       Happy Learning!
       The Nakama Tech Team
     </p>
+    </div>
+        <div class = "col-6";>
+         
+          <img class =  "img-fluid " src = "/static/Technology_and_Infrastructure.jpg" style = "width: 100%; height: 100%; object-fit: cover; border-radius: 4px;"  >
+        </div>
+    </div>
       <h2  class="text-center" mt-2 mb-4>Available Online Courses </h2>
   <!--  <p>
 
@@ -127,7 +145,7 @@
     </p>
     </div>
         <div id="contactusbutton">
-        <button class="btn btn-outline-primary btn-lg">Contact Us</button>
+        <a href="contactus.html" class="btn btn-outline-primary btn-lg">Contact Us</a>
         </div>
         
     
@@ -148,6 +166,8 @@
   <p class="text-center">
     Copyright Nakama 2023 tech 
   </p>
+
+  {% include 'footer.html' %}
 
   
 
